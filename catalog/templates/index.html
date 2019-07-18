@@ -1,0 +1,24 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Biblioteca Local: Inicio</h1>
+  <p>Bienvenido a la Biblioteca Local,un sitio WEB desarrollado por <em>RICARDO AIDELMAN</em>!</p>
+  <!-- <p>Welcome to LocalLibrary, a website developed by <em>Mozilla Developer Network</em>!</p> -->
+  <h2>Contenido Dinámico</h2>
+  <!-- <h2>Dynamic content</h2> -->
+  <p>La Biblioteca tiene los siguientes registros:</p>
+  <!-- <p>The library has the following record counts:</p> -->
+  <ul>
+    <li><strong>Libros:</strong> {{ num_books }}</li>
+    <li><strong>Copias:</strong> {{ num_instances }}</li>
+    <li><strong>Copias disponibles:</strong> {{ num_instances_available }}</li>
+    <li><strong>Autores:</strong> {{ num_authors }}</li>
+    <li><strong>Generos:</strong> {{ num_genres }}</li>
+    <li><strong>Idiomas:</strong> {{ num_languages }}</li>
+
+    <!-- <li><strong>Books:</strong> {{ num_books }}</li>
+    <li><strong>Copies:</strong> {{ num_instances }}</li>
+    <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
+    <li><strong>Authors:</strong> {{ num_authors }}</li> -->
+  </ul>
+{% endblock %}
