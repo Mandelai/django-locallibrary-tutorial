@@ -1,6 +1,8 @@
 from django.contrib import admin
 from catalog.models import Author, Genre, Book, BookInstance, Language
 
+# usuario: test_user  password: 4321test
+
 # Register your models here.
 
 # admin.site.register(Book)
@@ -58,9 +60,9 @@ class BookInstanceAdmin(admin.ModelAdmin):
 
     fieldsets = (
            (None, {
-               'fields': ('book', ('language','imprint'))
+                'fields': ('book', ('language','imprint'))
            }),
            ('Availability', {
-               'fields': (('status', 'due_back'),)
+               'fields': (('status', 'due_back'),'borrower')
            }),
-       )
+    )
