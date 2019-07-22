@@ -2,10 +2,11 @@ import datetime
 
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import permission_required
 from django.http import HttpResponseRedirect
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 
 # Create your views here.
 from catalog.models import Book, Author, BookInstance, Genre, Language
@@ -110,3 +111,17 @@ def renew_book_librarian(request, pk):
     }
 
     return render(request, 'catalog/book_renew_librarian.html', context)
+
+
+class AuthorCreate(CreateView):
+    model   = Author
+    fields  = '__all__'
+    # initial = {'date_of_death': '2050/01/20'}
+
+class AuthorUpdate(UpdateView):
+    model   = Author
+    fields  = ['first_name', 'last_name', 'date_of_birth', 'date_of_death']
+
+class AuthorDelete(DeleteView):
+    model       = Author
+    success_url = reverse_lazy('authors')
