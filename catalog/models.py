@@ -3,7 +3,10 @@ from django.urls import reverse # Used to generate URLs by reversing the URL pat
 import uuid # Required for unique book instances
 from django.contrib.auth.models import User
 from datetime import date
+<<<<<<< HEAD
 
+=======
+>>>>>>> Primer_Branch
 
 # Create your models here.
 class Genre(models.Model):
@@ -80,17 +83,24 @@ class BookInstance(models.Model):
 
     class Meta:
         ordering = ['due_back']
+<<<<<<< HEAD
         permissions = (("can_mark_returned", "Set book as returned"),)
+=======
+        permissions = (("can_mark_returned", "Set book as returned"),)  
+>>>>>>> Primer_Branch
 
     def __str__(self):
         """String for representing the Model object."""
         # return f'{self.id} ({self.book.title})'
         return f'{self.book.title} ({self.language}) ({self.id})'
 
+<<<<<<< HEAD
     def get_absolute_url(self):
         """Returns the url to access a detail record for this book."""
         return reverse('bookinst-detail', args=[str(self.id)])
 
+=======
+>>>>>>> Primer_Branch
     @property
     def is_overdue(self):
         if self.due_back and date.today() > self.due_back:

@@ -44,7 +44,7 @@ class BookAdmin(admin.ModelAdmin):
 @admin.register(BookInstance)
 class BookInstanceAdmin(admin.ModelAdmin):
     # pass
-    list_display = ('book', 'language', 'status', 'due_back')
+    list_display = ('book', 'language', 'status', 'borrower', 'due_back')
     list_filter = ('status', 'due_back', 'language')
     # exclude = ['id']
     # fields = ['book', ('language','imprint'), ('status', 'due_back')]
@@ -63,6 +63,10 @@ class BookInstanceAdmin(admin.ModelAdmin):
                 'fields': ('book', ('language','imprint'))
            }),
            ('Availability', {
+<<<<<<< HEAD
                'fields': (('status', 'due_back'),'borrower')
+=======
+               'fields': (('status', 'due_back'), 'borrower' )
+>>>>>>> Primer_Branch
            }),
     )
