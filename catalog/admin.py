@@ -63,10 +63,6 @@ class BookInstanceAdmin(admin.ModelAdmin):
                 'fields': ('book', ('language','imprint'))
            }),
            ('Availability', {
-<<<<<<< HEAD
                'fields': (('status', 'due_back'),'borrower')
-=======
-               'fields': (('status', 'due_back'), 'borrower' )
->>>>>>> Primer_Branch
            }),
     )

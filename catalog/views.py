@@ -2,15 +2,11 @@ import datetime
 
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
-<<<<<<< HEAD
-from django.contrib.auth.mixins import LoginRequiredMixin
-=======
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import permission_required
 from django.http import HttpResponseRedirect
 from django.urls import reverse, reverse_lazy
->>>>>>> Primer_Branch
 
 # Create your views here.
 from catalog.models import Book, Author, BookInstance, Genre, Language

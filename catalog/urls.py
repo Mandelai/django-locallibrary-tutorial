@@ -15,9 +15,6 @@ urlpatterns += [
 ]
 
 urlpatterns += [
-<<<<<<< HEAD
-    path('allbooks/', views.LoanedBooksListView.as_view(), name='all-borrowed'),
-=======
     path('allborrowed/', views.LoanedBooksListView.as_view(), name='all-borrowed'),
 ]
 
@@ -35,5 +32,4 @@ urlpatterns += [
     path('book/create/', views.BookCreate.as_view(), name='book_create'),
     path('book/<int:pk>/update/', views.BookUpdate.as_view(), name='book_update'),
     path('book/<int:pk>/delete/', views.BookDelete.as_view(), name='book_delete'),
->>>>>>> Primer_Branch
 ]
