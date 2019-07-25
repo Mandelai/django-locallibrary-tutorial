@@ -64,10 +64,6 @@ class AuthorDetailView(generic.DetailView):
     model = Author
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> Primer_Branch
 class LoanedBooksByUserListView(LoginRequiredMixin,generic.ListView):
     """Generic class-based view listing books on loan to current user."""
     model = BookInstance
@@ -78,19 +74,13 @@ class LoanedBooksByUserListView(LoginRequiredMixin,generic.ListView):
         return BookInstance.objects.filter(borrower=self.request.user).filter(status__exact='o').order_by('due_back')
 
 class LoanedBooksListView(LoginRequiredMixin,generic.ListView):
-<<<<<<< HEAD
-    """Generic class-based view listing books on loan to any user."""
-=======
     """Generic class-based view listing all books loaned."""
->>>>>>> Primer_Branch
     model = BookInstance
     template_name ='catalog/bookinstance_list_borrowed_user.html'
     paginate_by = 10
 
     def get_queryset(self):
         return BookInstance.objects.filter(status__exact='o').order_by('due_back')
-<<<<<<< HEAD
-=======
 
 @permission_required('catalog.can_mark_returned')
 def renew_book_librarian(request, pk):
@@ -149,4 +139,3 @@ class BookUpdate(UpdateView):
 class BookDelete(DeleteView):
     model       = Book
     success_url = reverse_lazy('books')
->>>>>>> Primer_Branch
